@@ -10,7 +10,6 @@ export class AppComponent {
   private message: String = "You lost!";
 
   public endGame(status: boolean): void {
-    console.log("Status", typeof status, status);
     this.statusGame = false;
 
     if (status) {
