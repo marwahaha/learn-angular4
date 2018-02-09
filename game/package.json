@@ -1,6 +1,6 @@
 {
-  "name": "index",
-  "version": "0.0.0",
+  "name": "learn-english-game",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
