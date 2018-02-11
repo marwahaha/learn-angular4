@@ -36,7 +36,7 @@ export class PanelComponent implements OnInit {
   }
 
   public compareAnswers(): void {
-    if (this.roundPhrase.ptBr == this.answer) {
+    if (this.roundPhrase.ptBr === this.answer) {
       console.log("Answer correct =)");
 
       this.progress += 100 / this.phrases.length;

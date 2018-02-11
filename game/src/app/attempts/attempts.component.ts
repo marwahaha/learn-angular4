@@ -19,7 +19,7 @@ export class AttemptsComponent implements OnChanges {
 
   ngOnChanges() {
     if (this.attemps !== this.hearts.length) {
-      let index = this.hearts.length - this.attemps - 1;
+      const index = this.hearts.length - this.attemps - 1;
       this.hearts[index].status = false;
     }
   }
