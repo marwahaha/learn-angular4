@@ -6,13 +6,13 @@
   <hr>
 
   <div class="row">
-    <div class="col-sm-4 mb1" *ngFor="let oferta of offers">
+    <div class="col-sm-4 mb1" *ngFor="let offer of offers">
       <div class="card">
-        <img class="card-img-top" [src]="oferta.images[0].url">
+        <img class="card-img-top" [src]="offer.images[0].url">
         <div class="card-block">
-          <h4 class="card-title">{{ oferta.title }}</h4>
-          <p class="card-text">{{ oferta.description }}</p>
-          <p class="price">R$ {{ oferta.value }}</p>
+          <h4 class="card-title">{{ offer.title }}</h4>
+          <p class="card-text">{{ offer.description }}</p>
+          <p class="price">R$ {{ offer.value }}</p>
           <a href="#" class="btn btn-outline-primary">View Deal</a>
         </div>
       </div>

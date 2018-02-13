@@ -9,9 +9,9 @@ const url = "http://localhost:3000/offers";
 export class OffersService {
   constructor(private http: Http) {}
 
-  public getOffers(): Promise<Offer[]> {
+  public getOffers(category: String = "?"): Promise<Offer[]> {
     return this.http
-      .get(url)
+      .get(`${url}${category}`)
       .toPromise()
       .then((response: any) => response.json());
   }
