@@ -18,7 +18,6 @@ export class DiversionComponent implements OnInit {
       .getOffers("?category=diversion")
       .then((offers: Array<Offer>) => {
         this.offers = offers;
-        console.log(this.offers);
       })
       .catch((reject: any) => {
         console.error("Error: ", reject);
