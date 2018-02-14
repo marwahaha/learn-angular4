@@ -1,46 +1,59 @@
 <div class="container">
-    <div class="offer" *ngIf="offer !== undefined">
+  <div class="offer" *ngIf="offer !== undefined">
 
-      <div class="row">
-        <div class="col">
-          <h4>{{ offer.description }}</h4>
+    <div class="row">
+      <div class="col">
+        <h4>{{ offer.description }}</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img_capa">
+          <img [src]="offer.images[0].url">
+        </div>
+
+        <div class="thumbnails">
+          <img *ngFor="let image of offer.images" [src]="image.url">
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="img_capa">
-            <img [src]="offer.images[0].url">
-          </div>
-
-          <div class="thumbnails">
-            <img *ngFor="let image of offer.images" [src]="image.url">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col text-center">
-              <p>Por apenas</p>
-            </div>
-
-          </div>
-
-          <div class="row">
-            <div class="col text-center">
-              <h1>R$ {{ offer.value }}</h1>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col text-center">
-              <button type="button" class="btn btn-warning btn-lg">Add to cart</button>
-            </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col text-center">
+            <p>Por apenas</p>
           </div>
 
         </div>
 
+        <div class="row">
+          <div class="col text-center">
+            <h1>R$ {{ offer.value }}</h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col text-center">
+            <button type="button" class="btn btn-warning btn-lg">Add to cart</button>
+          </div>
+        </div>
       </div>
+    </div>
 
+  </div>
+  <div class="row mt1 mb2">
+    <div class="col">
+      <ul class="nav nav-tabs" id="tabsOffer" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="how-use" data-toggle="tab" role="tab" aria-expanded="true">How Use</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="where" data-toggle="tab" role="tab">Where is?</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
+</div>
