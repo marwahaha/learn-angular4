@@ -4,7 +4,7 @@
       <a routerLink="" class="navbar-brand">
         <img src="/assets/logo.png" />
       </a>
-      <a a href="#"><img src="/assets/cart.png" /></a>
+      <a href="#"><img src="/assets/cart.png" /></a>
     </div>
   </nav>
 
@@ -16,6 +16,11 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="diversion">Diversion</a>
+        </li>
+        <li class="nav-item">
+          <form class="form-inline">
+            <input class="form-control input-search" type="search" placeholder="Search" #term (keyup)="search(term.value)">
+          </form>
         </li>
       </ul>
     </div>

@@ -26,3 +26,12 @@
 .active {
   color: #FFF;
 }
+
+.form-inline {
+  padding: .3rem 1rem;
+}
+.input-search {
+  padding: .175rem .55rem;
+  border-radius: 0;
+  border: none;
+}
