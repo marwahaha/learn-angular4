@@ -55,4 +55,8 @@ export class HeaderComponent implements OnInit {
     //   () => console.log("Observable findOfferByTerm completed")
     // );
   }
+
+  public clearFilter(): void {
+    this.searchSubject.next("");
+  }
 }

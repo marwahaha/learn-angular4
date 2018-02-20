@@ -12,8 +12,10 @@ import { MainComponent } from "./main/main.component";
 import { RestaurantsComponent } from "./restaurants/restaurants.component";
 import { DiversionComponent } from "./diversion/diversion.component";
 import { OfferComponent } from "./offer/offer.component";
-import { HowUseComponent } from './offer/how-use/how-use.component';
-import { WhereComponent } from './offer/where/where.component';
+import { HowUseComponent } from "./offer/how-use/how-use.component";
+import { WhereComponent } from "./offer/where/where.component";
+
+import { AbbreviateDescription } from "./utils/abbreviate-description.pipe";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { WhereComponent } from './offer/where/where.component';
     DiversionComponent,
     OfferComponent,
     HowUseComponent,
-    WhereComponent
+    WhereComponent,
+    AbbreviateDescription
   ],
   imports: [BrowserModule, HttpModule, RouterModule.forRoot(ROUTES)],
   providers: [],

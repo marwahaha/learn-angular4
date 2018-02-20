@@ -21,6 +21,13 @@
           <form class="form-inline">
             <input class="form-control input-search" type="search" placeholder="Search" #term (keyup)="search(term.value)">
           </form>
+          <ul class="list-group p-a">
+            <li class="list-group-item" *ngFor="let offer of offers | async">
+              <a [routerLink]="['/offer', offer.id]" (click)="clearFilter()">
+                {{ offer.title }}
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>

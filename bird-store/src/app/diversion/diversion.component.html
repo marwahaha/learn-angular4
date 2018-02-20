@@ -1,8 +1,8 @@
 <div class="container">
 
   <div class="section text-center">
-    <h3>Cinema, viagens, diversão muito e mais!</h3>
-    <h5>Conheça as melhores ofertas para você se divertir quando quiser:</h5>
+    <h3>Cinema, travel, fun a lot and more!</h3>
+    <h5>Know the best deals for you to have fun when you want:</h5>
   </div>
 
   <hr>
@@ -22,11 +22,11 @@
       </div>
 
       <div class="row">
-        <p>Anunciado por: <b>{{ offer.advertiser }}</b></p>
+        <p>Announced by: <b>{{ offer.advertiser }}</b></p>
       </div>
 
       <div class="row">
-        <p>R$ {{ offer.value }}</p>
+        <p>{{ offer.value | currency }}</p>
       </div>
 
       <div class="row">

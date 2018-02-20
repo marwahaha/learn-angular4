@@ -1,8 +1,8 @@
 <div class="container">
 
     <div class="section text-center">
-      <h3>Rodízios, Buffet, Carnes Especiais, Feijoada e mais!</h3>
-      <h5>Conheça as melhores ofertas de restaurantes:</h5>
+      <h3>Casters, Buffet, Special Meats and more!</h3>
+      <h5>Explore the world:</h5>
     </div>
 
     <hr>
@@ -22,11 +22,11 @@
         </div>
 
         <div class="row">
-          <p>Anunciado por: <b>{{ offer.advertiser }}</b></p>
+          <p>Announced by: <b>{{ offer.advertiser }}</b></p>
         </div>
 
         <div class="row">
-          <p>R$ {{ offer.value }}</p>
+          <p>{{ offer.value | currency }}</p>
         </div>
 
         <div class="row">
