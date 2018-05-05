@@ -11,9 +11,9 @@ import "rxjs/add/operator/retry";
 
 @Injectable()
 export class OffersService {
-  constructor(private http: Http) {}
+  constructor(private http: Http) { }
 
-  public getOffers(category: String = "?"): Promise<Offer[]> {
+  public getOffers(category: string = "?"): Promise<Offer[]> {
     return this.http
       .get(`${URL_API}offers${category}`)
       .toPromise()
@@ -29,7 +29,7 @@ export class OffersService {
 
   public getOfferDescriptionsById(
     id: number,
-    description: String
+    description: string
   ): Promise<string> {
     return this.http
       .get(`${URL_API}${description}/${id}`)

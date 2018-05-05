@@ -16,6 +16,7 @@ import { HowUseComponent } from "./offer/how-use/how-use.component";
 import { WhereComponent } from "./offer/where/where.component";
 
 import { AbbreviateDescription } from "./utils/abbreviate-description.pipe";
+import { OrderPurchaseComponent } from './order-purchase/order-purchase.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AbbreviateDescription } from "./utils/abbreviate-description.pipe";
     OfferComponent,
     HowUseComponent,
     WhereComponent,
-    AbbreviateDescription
+    AbbreviateDescription,
+    OrderPurchaseComponent
   ],
   imports: [BrowserModule, HttpModule, RouterModule.forRoot(ROUTES)],
   providers: [],

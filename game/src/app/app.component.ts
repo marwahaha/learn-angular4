@@ -7,7 +7,7 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   private statusGame: boolean = true;
-  private message: String = "You lost!";
+  private message: string = "You lost!";
 
   public endGame(status: boolean): void {
     this.statusGame = false;

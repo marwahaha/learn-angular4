@@ -5,6 +5,7 @@ import { DiversionComponent as Diversion } from "./diversion/diversion.component
 import { OfferComponent as Offer } from "./offer/offer.component";
 import { HowUseComponent as HowUse } from "./offer/how-use/how-use.component";
 import { WhereComponent as Where } from "./offer/where/where.component";
+import { OrderPurchaseComponent as OrderPurchase } from "./order-purchase/order-purchase.component";
 
 export const ROUTES: Routes = [
   { path: "", component: Main },
@@ -19,5 +20,6 @@ export const ROUTES: Routes = [
       { path: "how-use", component: HowUse },
       { path: "where", component: Where }
     ]
-  }
+  },
+  { path: "order-purchase", component: OrderPurchase },
 ];

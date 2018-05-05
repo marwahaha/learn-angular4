@@ -1,8 +1,8 @@
 export class Phrase {
-  public en: String;
-  public ptBr: String;
+  public en: string;
+  public ptBr: string;
 
-  constructor(en: String, ptBr: String) {
+  constructor(en: string, ptBr: string) {
     this.en = en;
     this.ptBr = ptBr;
   }

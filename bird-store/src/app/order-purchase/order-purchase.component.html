@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="order-purchase">
+    <form novalidate>
+    
+      <h5>Your Purchase</h5>
+      <hr />
+
+      <div class="form-row" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+        <div class="form-group col-sm-1">
+          <img src="/assets/offers/1/img1.jpg" class="img-fluid">
+        </div>
+        <div class="form-group col-sm-6">
+          Super Burger
+          <br>
+          Mini-hamburger caster with entry option.
+        </div>
+
+        <div>
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-link">-</button>
+              1
+              <button type="button" class="btn btn-link">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-3 d-flex justify-content-end">
+          29.90
+        </div>
+      </div>
+      
+      <div class="form-row" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+        <div class="form-group col-sm-1">
+          <img src="/assets/offers/4/img1.jpg" class="img-fluid">
+        </div>
+        <div class="form-group col-sm-6">
+          Water resort
+          <br>
+          Fun guaranteed with pools, trails and more.
+        </div>
+
+        <div>
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-link">-</button>
+              1
+              <button type="button" class="btn btn-link">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-3 d-flex justify-content-end">
+          31.90
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group col d-flex justify-content-end">
+          <h4>Total order: 61.80</h4>
+        </div>
+      </div>
+      <br>
+
+
+      <h5>Delivery Information</h5>
+      <hr />
+
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+          <input [value]="adrress" #inputAdrress (input)="updateAdrress(inputAdrress.value)" type="text" class="form-control is-invalid" placeholder="Address" autocomplete="off" minlength="5" required>
+          <div class="invalid-feedback">Invalid address</div>
+        </div>
+
+        <div class="form-group col-md-2">
+          <input [value]="number" #inputNumber (input)="updateAdrress(inputNumber.value)" type="text" class="form-control is-valid" placeholder="Number" autocomplete="off" minlength="1" required>
+          <br>
+          <small class="form-text text-muted">Ok</small>
+        </div>
+
+        <div class="form-group col-md-4">
+          <input [value]="complement" #inputComplement (input)="updateAdrress(inputComplement.value)" type="text" class="form-control" placeholder="Complement" autocomplete="off">
+        </div>
+
+      </div>
+      <br>
+
+      <h5>Payment data</h5>
+      <hr />
+
+      <div class="form-row">
+          
+        <div class="form-group col-md-3">
+          <select #selectPaymentForm (change)="updatePaymentForm(selectPaymentForm.value)" class="form-control is-invalid">
+            <option>Select an option</option>
+            <option value="cash" selected="{{ paymentForm == 'cash' ? 'selected' : '' }}">Cash</option>
+            <option value="debit" selected="{{ paymentForm == 'debit' ? 'selected' : '' }}">Debit</option>
+          </select>
+
+          <div class="invalid-feedback">Select a form of payment</div>
+        </div>
+      </div>
+
+      <hr />
+      <button type="button" class="btn btn-primary btn-lg">Confirm purchase</button>
+    </form>
+  </div>
+</div>

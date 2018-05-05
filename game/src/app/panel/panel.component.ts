@@ -8,9 +8,9 @@ import { PHRASES } from "./phrase-mock";
   styleUrls: ["./panel.component.css"]
 })
 export class PanelComponent implements OnInit {
-  public instruction: String = "Translate this phrase:";
+  public instruction: string = "Translate this phrase:";
   public phrases: Phrase[] = PHRASES;
-  private answer: String = "";
+  private answer: string = "";
   private round: number = 0;
   private roundPhrase: Phrase;
 
@@ -23,7 +23,7 @@ export class PanelComponent implements OnInit {
     this.updateRound();
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   public updateAnswers(answer: Event): void {
     this.answer = (<HTMLInputElement>answer.target).value;

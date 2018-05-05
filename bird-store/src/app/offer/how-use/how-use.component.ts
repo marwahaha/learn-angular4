@@ -8,7 +8,7 @@ import { OffersService } from "../../offers.service";
   styleUrls: ["./how-use.component.css"]
 })
 export class HowUseComponent implements OnInit {
-  private description: String;
+  private description: string;
   private route: ActivatedRoute;
   private offersService: OffersService;
 
@@ -23,7 +23,7 @@ export class HowUseComponent implements OnInit {
 
       this.offersService
         .getOfferDescriptionsById(idOffer, "how-use")
-        .then((description: String) => {
+        .then((description: string) => {
           this.description = description;
         })
         .catch((reject: any) => {

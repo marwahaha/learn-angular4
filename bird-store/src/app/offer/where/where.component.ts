@@ -9,7 +9,7 @@ import { OffersService } from "../../offers.service";
   providers: [OffersService]
 })
 export class WhereComponent implements OnInit {
-  private description: String;
+  private description: string;
   private route: ActivatedRoute;
   private offersService: OffersService;
 
@@ -24,7 +24,7 @@ export class WhereComponent implements OnInit {
 
       this.offersService
         .getOfferDescriptionsById(idOffer, "where")
-        .then((description: String) => {
+        .then((description: string) => {
           this.description = description;
         })
         .catch((reject: any) => {
