@@ -1,22 +1,20 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { HttpModule } from "@angular/http";
+import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
-
-import { ROUTES } from "./app.routes";
-
 import { AppComponent } from "./app.component";
-import { HeaderComponent } from "./header/header.component";
-import { FooterComponent } from "./footer/footer.component";
-import { MainComponent } from "./main/main.component";
-import { RestaurantsComponent } from "./restaurants/restaurants.component";
+import { ROUTES } from "./app.routes";
+import CartService from './cart.service';
 import { DiversionComponent } from "./diversion/diversion.component";
-import { OfferComponent } from "./offer/offer.component";
+import { FooterComponent } from "./footer/footer.component";
+import { HeaderComponent } from "./header/header.component";
+import { MainComponent } from "./main/main.component";
 import { HowUseComponent } from "./offer/how-use/how-use.component";
+import { OfferComponent } from "./offer/offer.component";
 import { WhereComponent } from "./offer/where/where.component";
-
-import { AbbreviateDescription } from "./utils/abbreviate-description.pipe";
 import { OrderPurchaseComponent } from './order-purchase/order-purchase.component';
+import { RestaurantsComponent } from "./restaurants/restaurants.component";
+import { AbbreviateDescription } from "./utils/abbreviate-description.pipe";
 
 @NgModule({
   declarations: [
@@ -33,7 +31,7 @@ import { OrderPurchaseComponent } from './order-purchase/order-purchase.componen
     OrderPurchaseComponent
   ],
   imports: [BrowserModule, HttpModule, RouterModule.forRoot(ROUTES)],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

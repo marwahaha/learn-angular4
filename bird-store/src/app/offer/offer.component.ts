@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params } from "@angular/router";
+import CartService from "../cart.service";
 import { OffersService } from "../offers.service";
 import { Offer } from "../shared/offer.model";
 
@@ -11,13 +12,8 @@ import { Offer } from "../shared/offer.model";
 })
 export class OfferComponent implements OnInit {
   public offer: Offer;
-  private route: ActivatedRoute;
-  private offersService: OffersService;
 
-  constructor(route: ActivatedRoute, offersService: OffersService) {
-    this.route = route;
-    this.offersService = offersService;
-  }
+  constructor(private route: ActivatedRoute, private offersService: OffersService, private cartService: CartService) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -32,5 +28,11 @@ export class OfferComponent implements OnInit {
           console.error("Error: ", reject);
         });
     });
+  }
+
+  public addToCart(): void {
+    console.log('Offer to cart: ', this.offer);
+    this.cartService.addItem(this.offer);
+    console.log('itens', this.cartService.showItems());
   }
 }
