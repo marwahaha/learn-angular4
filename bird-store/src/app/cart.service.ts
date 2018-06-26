@@ -1,18 +1,24 @@
-import { ItemCart } from "./shared/item-cart.model";
-import { Offer } from "./shared/offer.model";
+import { ItemCart } from './shared/item-cart.model';
+import { Offer } from './shared/offer.model';
 
 export default class CartService {
-
   public items: ItemCart[] = [];
 
-  constructor() { }
+  constructor() {}
 
   showItems(): ItemCart[] {
     return this.items;
   }
 
   addItem(item: Offer) {
-    const dataItemCart = new ItemCart(item.id, item.images[0], item.title, item.description, item.value, 1);
+    const dataItemCart = new ItemCart(
+      item.id,
+      item.images[0],
+      item.title,
+      item.description,
+      item.value,
+      1
+    );
 
     const existsItemCart = this.existsItem(item);
     if (!!existsItemCart) {
@@ -23,7 +29,9 @@ export default class CartService {
   }
 
   existsItem(item: Offer | ItemCart) {
-    return this.items.find((currentItem: ItemCart) => currentItem.id === item.id);
+    return this.items.find(
+      (currentItem: ItemCart) => currentItem.id === item.id
+    );
   }
 
   getTotalCartItems(): number {
@@ -53,5 +61,9 @@ export default class CartService {
     if (!!selectedItem) {
       selectedItem.quantity += 1;
     }
+  }
+
+  clearCart(): void {
+    this.items = [];
   }
 }

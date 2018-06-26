@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="order-purchase">
-    <form novalidate>
-    
+  <div class="order-purchase" *ngIf="orderID === undefined">
+    <form [formGroup]="form" novalidate (ngSubmit)="confirmPurchase()">
+
       <h5>Your Purchase</h5>
       <hr>
 
@@ -32,36 +32,37 @@
         </div>
       </div>
 
-      <ng-template #emptyItems>
-        <div class="form-row d-flex justify-content-center alert alert-warning" style="padding: 2rem;">Your cart is empty!</div>
-      </ng-template>
-      
       <div class="form-row">
         <div class="form-group col d-flex justify-content-end">
           <h4>Total order: {{ cartService.getTotalCartItems() }}</h4>
         </div>
       </div>
+
+      <ng-template #emptyItems>
+        <div class="form-row d-flex justify-content-center alert alert-warning" style="padding: 2rem;">Your cart is empty!</div>
+      </ng-template>
+
       <br>
-
-
       <h5>Delivery Information</h5>
       <hr>
 
       <div class="form-row">
 
         <div class="form-group col-md-6">
-          <input [value]="adrress" #inputAdrress (input)="updateAdrress(inputAdrress.value)" type="text" class="form-control is-invalid" placeholder="Address" autocomplete="off" minlength="5" required>
-          <div class="invalid-feedback">Invalid address</div>
+          <input formControlName="address"
+          type="text" class="form-control" placeholder="Address" autocomplete="off">
+          <small *ngIf="form.get('address').valid && form.get('address').touched" class="form-text text-success">Ok</small>
+          <small *ngIf="!form.get('address').valid && form.get('address').touched" class="form-text text-danger">Invalid address</small>
         </div>
 
         <div class="form-group col-md-2">
-          <input [value]="number" #inputNumber (input)="updateAdrress(inputNumber.value)" type="text" class="form-control is-valid" placeholder="Number" autocomplete="off" minlength="1" required>
-          <br>
-          <small class="form-text text-muted">Ok</small>
+          <input formControlName="number" type="text" class="form-control" placeholder="Number" autocomplete="off">
+          <small *ngIf="form.get('number').valid && form.get('number').touched" class="form-text text-success">Ok</small>
+          <small *ngIf="!form.get('number').valid && form.get('number').touched" class="form-text text-danger">Invalid number</small>
         </div>
 
         <div class="form-group col-md-4">
-          <input [value]="complement" #inputComplement (input)="updateAdrress(inputComplement.value)" type="text" class="form-control" placeholder="Complement" autocomplete="off">
+          <input formControlName="complement" type="text" class="form-control" placeholder="Complement" autocomplete="off">
         </div>
 
       </div>
@@ -71,20 +72,26 @@
       <hr>
 
       <div class="form-row">
-          
+
         <div class="form-group col-md-3">
-          <select #selectPaymentForm (change)="updatePaymentForm(selectPaymentForm.value)" class="form-control is-invalid">
-            <option>Select an option</option>
+          <select formControlName="paymentForm" class="form-control">
+            <option selected="{{ paymentForm == '' || paymentForm == undefined ? 'selected' : '' }}">Select an option</option>
             <option value="cash" selected="{{ paymentForm == 'cash' ? 'selected' : '' }}">Cash</option>
             <option value="debit" selected="{{ paymentForm == 'debit' ? 'selected' : '' }}">Debit</option>
           </select>
 
-          <div class="invalid-feedback">Select a form of payment</div>
+          <small *ngIf="form.get('paymentForm').valid && form.get('paymentForm').touched" class="form-text text-success">Ok</small>
+          <small *ngIf="!form.get('paymentForm').valid && form.get('paymentForm').touched" class="form-text text-danger">Select a form of payment</small>
         </div>
       </div>
 
       <hr>
-      <button type="button" class="btn btn-primary btn-lg">Confirm purchase</button>
+      <button type="submit" class="btn btn-primary btn-lg">Confirm purchase</button>
     </form>
   </div>
+
+  <div *ngIf="orderID !== undefined">
+    <app-order-purchase-success [orderID]=orderID></app-order-purchase-success>
+  </div>
+
 </div>
