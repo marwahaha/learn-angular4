@@ -14,6 +14,6 @@ $ ng server
 
 #### Components
 
-To generate your components, you need to run `ng generate component componentName` or abreviate command `ng g c componentName`.
+To generate your components, you need to run `ng generate component componentName` or abbreviate command `ng g c componentName`.
 
 if you are not using _tests_, you can omit this to create a spec file to our component, using this flag `--spec=false`.
